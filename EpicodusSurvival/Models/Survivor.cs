@@ -9,15 +9,17 @@ namespace EpicodusSurvival.Models
     private int _caffeine;
     private int _sleep;
     private bool _dead;
+    public bool decaffed;
     public static Survivor currentSurvivor;
 
     public Survivor(string name)
     {
       _name = name;
       _codingSkill =0;
-      _caffeine= 100;
-      _sleep = 100;
+      _caffeine= 10;
+      _sleep = 10;
       _dead= false;
+      decaffed = false;
     }
 
     public void SetCodingSkill(int newCodingSkill)
@@ -84,11 +86,25 @@ namespace EpicodusSurvival.Models
     }
     public void DecreaseSleep()
     {
-      this.SetSleep(this.GetSleep() - 1);
+      if(Survivor.currentSurvivor.decaffed == false)
+      {
+        this.SetSleep(this.GetSleep() - 1);
+      }
+      else
+      {
+      this.SetSleep(this.GetSleep() - 3);
+      }
     }
     public void DecreaseCaffeine()
     {
-      this.SetCaffeine(this.GetCaffeine() - 1);
+      if(Survivor.currentSurvivor.decaffed == true)
+      {
+        this.SetCaffeine(this.GetCaffeine());
+      }
+      else
+      {
+        this.SetCaffeine(this.GetCaffeine() - 1);
+      }
     }
 
     public static void TimeDecay(Survivor thisSurvivor)

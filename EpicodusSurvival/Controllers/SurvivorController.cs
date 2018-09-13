@@ -53,7 +53,19 @@ namespace EpicodusSurvival.Controllers
       [HttpPost("/survivor/decay")]
       public ActionResult Decay()
       {
-        Survivor.TimeDecay(Survivor.currentSurvivor);
+        var mortal = Survivor.currentSurvivor;
+        Survivor.TimeDecay(mortal);
+        if(mortal.GetSleep()<=0)
+        {
+          return View("GameOver");
+        }
+        if(mortal.GetCaffeine()<=0)
+        {
+          mortal.decaffed = true;
+        } else
+        {
+          mortal.decaffed = false;
+        }
         return View("Index", Survivor.currentSurvivor);
       }
     }
