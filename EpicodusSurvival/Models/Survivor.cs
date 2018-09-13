@@ -15,9 +15,9 @@ namespace EpicodusSurvival.Models
     public Survivor(string name)
     {
       _name = name;
-      _codingSkill =99;
-      _caffeine= 10;
-      _sleep = 10;
+      _codingSkill =10;
+      _caffeine= 20;
+      _sleep = 30;
       _dead= false;
       decaffed = false;
     }
