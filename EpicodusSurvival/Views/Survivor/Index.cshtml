@@ -5,21 +5,21 @@
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
   </head>
   <body>
-    <div class-"jumbotron">
-      <h1>@Model.GetName()</h1>
-    </div>
     <div class="container">
-      <p>@Model.GetCodingSkill()</p>
-      <p>@Model.GetSleep()</p>
-      <p>@Model.GetCaffeine()</p>
+      <div class-"jumbotron">
+        <h1>@Model.GetName()</h1>
+      </div>
+      <p>Coding Skill: @Model.GetCodingSkill()</p>
+      <p>Sleep: @Model.GetSleep()</p>
+      <p>Caffeine: @Model.GetCaffeine()</p>
       <form action="/survivor/coding" method="post">
         <button class="btn btn-info">Coding</button>
       </form>
       <form action="/survivor/caffeine" method="post">
-        <button class="btn btn-alert">Drink Coffee</button>
+        <button class="btn btn-warning">Drink Coffee</button>
       </form>
-      <form action="/survior/sleep" method="post">
-        <button class="btn btn-secondary">Sleep</button>
+      <form action="/survivor/sleep" method="post">
+        <button class="btn btn-success">Sleep</button>
       </form>
     </div>
   </body>

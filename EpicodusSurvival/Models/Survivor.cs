@@ -10,7 +10,7 @@ namespace EpicodusSurvival.Models
     private int _caffeine;
     private int _sleep;
     private bool _dead;
-
+    public static Survivor currentSurvivor;
 
     public Survivor(string name)
     {
@@ -64,6 +64,19 @@ namespace EpicodusSurvival.Models
     public bool GetDead()
     {
       return _dead ;
+    }
+
+    public void IncreaseCodingSkill()
+    {
+      this.SetCodingSkill(this.GetCodingSkill() + 1);
+    }
+    public void IncreaseSleep()
+    {
+      this.SetSleep(this.GetSleep() + 1);
+    }
+    public void IncreaseCaffeine()
+    {
+      this.SetCaffeine(this.GetCaffeine() + 1);
     }
 
     public void DecreaseCodingSkill()
