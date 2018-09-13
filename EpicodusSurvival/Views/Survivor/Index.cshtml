@@ -21,6 +21,14 @@
       <form action="/survivor/sleep" method="post">
         <button class="btn btn-success">Sleep</button>
       </form>
+      <form  action="/survivor/decay" method="post" style="display:none;">
+        <button id="auto" type="submit">Decay</button>
+      </form>
     </div>
+    <script>
+      setInterval(function(){
+        document.getElementById("auto").click();
+      }, 3000);
+    </script>
   </body>
 </html>

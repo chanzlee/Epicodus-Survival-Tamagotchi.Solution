@@ -29,6 +29,10 @@ namespace EpicodusSurvival.Controllers
       public ActionResult Coding()
       {
         Survivor.currentSurvivor.IncreaseCodingSkill();
+        if (Survivor.currentSurvivor.GetCodingSkill()>=100)
+        {
+          return View("Graduate", Survivor.currentSurvivor);
+        }
         return View("Index", Survivor.currentSurvivor);
       }
 
@@ -46,7 +50,11 @@ namespace EpicodusSurvival.Controllers
         return View("Index", Survivor.currentSurvivor);
       }
 
-
-
+      [HttpPost("/survivor/decay")]
+      public ActionResult Decay()
+      {
+        Survivor.TimeDecay(Survivor.currentSurvivor);
+        return View("Index", Survivor.currentSurvivor);
+      }
     }
 }

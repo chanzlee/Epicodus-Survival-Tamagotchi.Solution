@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 namespace EpicodusSurvival.Models
 {
@@ -92,13 +91,11 @@ namespace EpicodusSurvival.Models
       this.SetCaffeine(this.GetCaffeine() - 1);
     }
 
-    public static void TimeElapse(Survivor thisSurvivor)
+    public static void TimeDecay(Survivor thisSurvivor)
     {
       thisSurvivor.DecreaseCodingSkill();
       thisSurvivor.DecreaseSleep();
       thisSurvivor.DecreaseCaffeine();
     }
-
-
   }
 }
