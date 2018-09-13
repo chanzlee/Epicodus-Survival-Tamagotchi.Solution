@@ -3,7 +3,7 @@ using EpicodusSurvival.Models;
 
 namespace EpicodusSurvival.Controllers
 {
-    public class HomeController : Controller
+    public class SurvivorController : Controller
     {
       [HttpGet("/survivor")]
       public ActionResult Index()

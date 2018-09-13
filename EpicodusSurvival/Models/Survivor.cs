@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Survivor.Models
+namespace EpicodusSurvival.Models
 {
   public class Survivor
   {
@@ -16,7 +16,6 @@ namespace Survivor.Models
     {
       _name = name;
       _codingSkill =0;
-      _hunger = 0;
       _caffeine= 100;
       _sleep = 100;
       _dead= false;
@@ -69,7 +68,7 @@ namespace Survivor.Models
 
     public void DecreaseCodingSkill()
     {
-      this.SetCoding(this.GetCodingSkill() - 1);
+      this.SetCodingSkill(this.GetCodingSkill() - 1);
     }
     public void DecreaseSleep()
     {
